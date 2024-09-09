@@ -1,4 +1,4 @@
-//MODO DESARROLLO
+
 const jsonData = [
     {
       "id": 1,
@@ -1643,7 +1643,7 @@ $('#table').bootstrapTable({
 });
 
 // Obtener categorías únicas para crear las pestañas
-const categories = ["Hombre", "Mujer", "Infantil"];
+const categories = [...new Set(jsonData.map(item => item.category))];
 
 // Generar botones dinámicamente
 categories.forEach(category => {
