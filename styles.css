@@ -12,6 +12,7 @@ body, html {
     font-weight: 400;
     font-style: normal;
     color: #e5b8b3;
+    font-size: 2.2em;
 }
 .bg-body-bellazure{
     background-color: #e5b8b3;
@@ -71,6 +72,18 @@ body, html {
     border-color: #5dfa6f;
     background-color: #5dfa6f0c;
 }
+.badge-category{
+    text-transform: capitalize;
+}
+.badge-bg-mujer{
+    background-color:#ffd3ca;
+}
+.badge-bg-hombre{
+    background-color:#5dd7fa;
+}
+.badge-bg-infantil{
+    background-color:#5dfa6f;
+}
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
@@ -96,6 +109,16 @@ body, html {
     color: white;
 }
 
+.carousel-container{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.alert{
+    border: 0px;
+    border-radius: 0px;
+}
+
 .carousel-caption {
     bottom: 3rem;
     z-index: 10;
@@ -113,34 +136,10 @@ body, html {
     object-fit: cover; 
 }
 
-.marketing .col-lg-4 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-.marketing h2 {
-    font-weight: 400;
-}
-.marketing .col-lg-4 p {
-    margin-right: .75rem;
-    margin-left: .75rem;
-}
- 
-.featurette-divider {
-    margin: 5rem 0; 
-}
-
-.featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    /* rtl:remove */
-    letter-spacing: -.05rem;
-}
-
 .navbar-nav {
     flex-wrap: nowrap;
     overflow-x: auto;
 }
-
 
 .nav-pills .nav-link {
     color: #876868;
@@ -158,15 +157,16 @@ body, html {
     color: #876868; 
 }
 
+
 @media (min-width: 768px) {
-.navbar .container-fluid {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-    
-.navbar-collapse {
-    position: absolute;
-    right: 0;
-} 
+    .navbar .container-fluid {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+        
+    .navbar-collapse {
+        position: absolute;
+        right: 0;
+    } 
 }

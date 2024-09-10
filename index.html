@@ -10,21 +10,13 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="superNav border-bottom py-2 bg-light">
-        <div class="container-fluid text-center">
-            <div class="row">
-              <div class="col align-self-center">
-                <span class="me-3"></span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="superNav border-bottom bg-light">
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand mx-auto" href="#">Bellazure</a>
               <div class="navbar-collapse">
                 <form class="d-flex">
-                  <input class="form-control me-2" id="search-input" type="search" placeholder="Buscar" aria-label="Buscar">
+                  <input class="form-control me-2" id="search-input" type="search" placeholder="Buscar perfume..." aria-label="Buscar">
                 </form>
               </div>
             </div>
@@ -32,13 +24,9 @@
         
         <nav class="navbar navbar-expand navbar-custom bg-body-bellazure" id="navbar_top">
             <div class="container justify-content-center">
-                
-                
                 <ul class="nav nav-pills navbar-nav" role="tablist">
-                    <li class="nav-item"><a class="nav-link mx-2 text-uppercase" href="#" data-category="all">Todos</a></li>
+                    <li class="nav-item"><a class="nav-link mx-2 text-uppercase active" href="#" data-category="all">Todos</a></li>
                 </ul>
-                
-                
             </div>
         </nav>
     </div>
@@ -79,16 +67,17 @@
                     <div class="card-body">
                         <div class="row g-0">
                             <div class="col-4 d-flex align-items-center">
-                                <img src="images/%ID%.png" alt="Imagen de perfil" class="mx-auto rounded img-fluid" style="height: 100px;">
+                                <img src="images/%ID%.png" alt="Imagen de perfil" class="mx-auto rounded img-fluid" style="height: 100px;padding:5px">
                             </div>
                             <div class="col-8">
                                 <h3 class="mb-0 text-truncated">%ID%</h3>
                                 <p class="lead">%NAME%</p>
+                                <p><span class="badge badge-category badge-bg-%CATEGORY%">%CATEGORY%</span></p>
                                 <small>Formatos disponibles:</small>
                                 <p>
-                                    <span class="badge rounded-pill text-bg-secondary">Muestra</span>
-                                    <span class="badge rounded-pill text-bg-secondary">50 ml</span>
-                                    <span class="badge rounded-pill text-bg-secondary">100 ml</span>
+                                    <span class="badge text-bg-secondary">Muestra</span>
+                                    <span class="badge text-bg-secondary">50 ml</span>
+                                    <span class="badge text-bg-secondary">100 ml</span>
                                 </p>
                             </div>
                         </div>

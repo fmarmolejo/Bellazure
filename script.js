@@ -1679,8 +1679,8 @@ function customView(data) {
     var view = ''
     $.each(data, function (i, row) {
         view += template.replaceAll('%ID%', row.id)
-        .replace('%NAME%', row.name)
-        .replace('%CATEGORY%', row.category)
+        .replaceAll('%NAME%', row.name)
+        .replaceAll('%CATEGORY%', row.category)
     })
 
 return `<div class="row mx-0">${view}</div>`
@@ -1688,11 +1688,11 @@ return `<div class="row mx-0">${view}</div>`
 
 document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 54) {
           document.getElementById('navbar_top').classList.add('fixed-top');
           // add padding top to show content behind navbar
-          navbar_height = document.querySelector('.navbar').offsetHeight;
-          document.body.style.paddingTop = navbar_height + 'px';
+          //navbar_height = document.querySelector('.navbar').offsetHeight;
+          //document.body.style.paddingTop = navbar_height + 'px';
         } else {
           document.getElementById('navbar_top').classList.remove('fixed-top');
            // remove padding top from body
