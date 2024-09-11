@@ -1668,11 +1668,12 @@ $('.navbar-nav').on('click', 'a', function() {
 $('#search-input').on('input', function() {
     const searchText = $(this).val().toLowerCase();
     const filteredData = jsonData.filter(item =>
-        item.name.toLowerCase().includes(searchText) ||
-        item.category.toLowerCase().includes(searchText)
-    );
+      item.name.toLowerCase().includes(searchText) ||
+      item.category.toLowerCase().includes(searchText));
     $('#table').bootstrapTable('load', filteredData);
 });
+
+
 
 function customView(data) {
     var template = $('#template').html()
@@ -1701,3 +1702,31 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }); 
 
+const names = jsonData.map(item => item.name);
+
+$(document).ready(function() {
+  var searchInput = $('#search-input');
+    
+  // Inicialización de Typeahead
+  searchInput.typeahead({
+      hint: false,         // Mostrar sugerencias mientras el usuario escribe
+      highlight: true,    // Resaltar coincidencias
+      minLength: 1        // Mínimo 1 carácter para empezar a sugerir
+  },
+  {
+      name: 'names',       // Nombre del dataset
+      source: function(query, syncResults) {
+          // Función que filtra las coincidencias
+          const matches = names.filter(name => name.toLowerCase().includes(query.toLowerCase()));
+          syncResults(matches);
+      }
+  });
+
+  searchInput.bind('typeahead:select', function(ev, suggestion) {
+    const searchText = suggestion.toLowerCase();
+    const filteredData = jsonData.filter(item =>
+      item.name.toLowerCase().includes(searchText) ||
+      item.category.toLowerCase().includes(searchText));
+    $('#table').bootstrapTable('load', filteredData);
+});
+});
