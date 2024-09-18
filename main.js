@@ -57,6 +57,17 @@ $(document).ready(function() {
         }
     });
 
+    $('#search-input').closest('form').on('submit', function(event){
+        event.preventDefault();
+    });
+
+    $('#search-input').on('input', function(e) {
+        const searchTerm = $(this).val().toLowerCase();
+        const filteredData = jsonData.filter(item => item.name.toLowerCase().includes(searchTerm) ||
+                                                    item.id.toString().includes(searchTerm));
+        $('#table').bootstrapTable('load', filteredData);
+    });
+
 });
 
 document.addEventListener("DOMContentLoaded", function(){
