@@ -4,6 +4,11 @@ body, html {
     height: 100%;
     margin: 0;
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 .superNav {
     font-size:13px;
 }
@@ -55,7 +60,7 @@ body, html {
 }
 
 .table-container {
-    padding: 20px 0; /* Margen superior e inferior */
+    padding: 20px 20%;
 }
 #category_title {
     margin-top: 56px;
@@ -204,4 +209,5 @@ body, html {
 .tt-hint {
     color: #999;
 }
+
 
