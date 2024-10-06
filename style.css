@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
+/* Global Styles */
 body, html {
     height: 100%;
     margin: 0;
+    background-color: #f8f9fa;
 }
 .superNav {
-    font-size:13px;
+    font-size: 13px;
 }
+
+/* Navbar Styles */
 .navbar-brand {
     font-family: "DM Serif Display", serif;
     font-weight: 400;
@@ -14,80 +18,161 @@ body, html {
     color: #e5b8b3;
     font-size: 2.2em;
 }
-.bg-body-bellazure{
+.bg-body-bellazure {
     background-color: #e5b8b3;
 }
-/* .nav-link:focus, .nav-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-} */
+.navbar-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* Container Styles */
 .container-fluid {
-    max-width: 1200px; /* Ancho máximo del contenido */
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-.item-one .carousel-caption h2{
+
+/* Carousel Styles */
+.carousel-container {
+    padding: 0;
+    margin-top: -1px;
+}
+.carousel-caption {
+    bottom: 1rem;
+    z-index: 10;
+}
+.carousel-item {
+    height: 220px;
+}
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 220px;
+    object-fit: none;
+}
+.item-one .carousel-caption h2,
+.item-one .carousel-caption h4 {
     color: #ffffff;
     font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: normal;
+}
+.item-one .carousel-caption h2 {
     font-size: 60px;
-    
 }
-.item-one .carousel-caption h4{
-    color: #ffffff;
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
+.item-one .carousel-caption h4 {
     font-size: 36px;
 }
+
+/* Responsive Adjustments */
 @media (max-width: 475px) {
     .carousel-caption {
         bottom: 2rem;
-        z-index: 10;
     }
-    .item-one .carousel-caption h2{
+    .item-one .carousel-caption h2 {
         font-size: 38px;
     }
-    .item-one .carousel-caption h4{
+    .item-one .carousel-caption h4 {
         font-size: 23px;
     }
 }
+@media (min-width: 768px) {
+    .navbar .container-fluid {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .navbar-collapse {
+        position: absolute;
+        right: 0;
+    }
+}
 
+/* Table and Badge Styles */
 .table-container {
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 #category_title {
     margin-top: 56px;
 }
-#category_title h1{
+#category_title h1 {
     font-family: "DM Serif Display", serif;
     color: #e5b8b3;
 }
+.badge-category {
+    text-transform: capitalize;
+}
+.badge-bg-mujer {
+    background-color: #ffd3ca;
+}
+.badge-bg-hombre {
+    background-color: #a6ebff;
+}
+.badge-bg-infantil {
+    background-color: #5dfa6f;
+}
+.text-mujer {
+    text-transform: capitalize;
+    --bs-text-opacity: 1;
+    color: #e5b8b3 !important;
+}
+.border-mujer {
+    --bs-border-opacity: 1;
+    border-color: #e5b8b3 !important;
+}
+.text-hombre {
+    text-transform: capitalize;
+    --bs-text-opacity: 1;
+    color: #a6ebff !important;
+}
+.border-hombre {
+    --bs-border-opacity: 1;
+    border-color: #a6ebff !important;
+}
+.text-infantil {
+    text-transform: capitalize;
+    --bs-text-opacity: 1;
+    color: #5dfa6f !important;
+}
+.border-infantil {
+    --bs-border-opacity: 1;
+    border-color: #5dfa6f !important;
+}
+
+/* Card Styles */
+.card {
+    border: 0px;
+}
+
 .card-mujer {
     border-color: #ffd3ca;
-    background-color: #ffd3ca0c;
+    background-color: rgba(255, 211, 202, 0.05);
 }
 .card-hombre {
     border-color: #5dd7fa;
-    background-color: #5dd7fa0c;
+    background-color: rgba(93, 215, 250, 0.05);
 }
 .card-infantil {
     border-color: #aaffb4;
-    background-color: #5dfa6f0c;
+    background-color: rgba(93, 250, 111, 0.05);
 }
-.badge-category{
-    text-transform: capitalize;
+
+/* Alert Styles */
+.alert {
+    border: 0;
+    border-radius: 0;
 }
-.badge-bg-mujer{
-    background-color:#ffd3ca;
+
+.alert-pink {
+    --bs-alert-color: #876868;
+    --bs-alert-bg: #ffd3ca;
+    --bs-alert-border-color: #a88985;
+    --bs-alert-link-color: #b4938f;
 }
-.badge-bg-hombre{
-    background-color:#a6ebff;
-}
-.badge-bg-infantil{
-    background-color:#5dfa6f;
-}
+
+/* WhatsApp Button */
 .whatsapp-button {
     position: fixed;
     bottom: 20px;
@@ -101,51 +186,17 @@ body, html {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
-
 .whatsapp-button i {
     margin-right: 10px;
 }
-
 .whatsapp-button:hover {
     background-color: #8d716e;
-    text-decoration: none;
     color: white;
 }
 
-.carousel-container{
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-top: -1px;
-}
-
-.alert{
-    border: 0px;
-    border-radius: 0px;
-}
-
-.carousel-caption {
-    bottom: 1rem;
-    z-index: 10;
-}
-
-.carousel-item {
-    height: 220px;
-}
-.carousel-item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 220px;
-    object-fit: none; 
-}
-
-.navbar-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-}
-
+/* Nav Pills */
 .nav-pills .nav-link {
     color: #876868;
     background-color: #ffd3ca;
@@ -153,29 +204,17 @@ body, html {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .nav-pills .nav-link:hover {
-    background-color: #ffffff; 
-    color: #876868; 
+    background-color: #ffffff;
+    color: #876868;
 }
 .nav-pills .nav-link.active {
     background-color: #ffffff;
     font-weight: bold;
-    color: #876868; 
+    color: #876868;
 }
 
-
-@media (min-width: 768px) {
-    .navbar .container-fluid {
-        display: flex;
-        justify-content: center;
-        position: relative;
-    }
-        
-    .navbar-collapse {
-        position: absolute;
-        right: 0;
-    } 
-}
-.twitter-typeahead{
+/* Typeahead (Twitter-typeahead) */
+.twitter-typeahead {
     width: 100%;
 }
 .tt-menu {
@@ -183,26 +222,20 @@ body, html {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
-
 .tt-suggestion {
     padding: 10px;
     cursor: pointer;
 }
-
 .tt-suggestion.tt-cursor {
     background-color: #007bff;
     color: white;
 }
-
 .tt-suggestion:hover {
     background-color: #f8f9fa;
 }
-
 .tt-hint {
     color: #999;
 }
-
-

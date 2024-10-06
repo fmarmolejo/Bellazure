@@ -37,42 +37,50 @@
         </div>
     </nav>
   </div>
-  <div class="container-fluid carousel-container">
-          <div class="carousel slide" id="carousel">
-              <div class="carousel-inner">
-                  <div class="carousel-item item-one active alert alert-warning alert-dismissible fade show" role="alert">
-                      <img src="images/bellazurefondo.png" class="d-block w-100" alt="Promoción de Bellazure, compra 10 perfumes y obtén uno gratis">
-                      <div class="carousel-caption carousel-caption text-start">
-                          <h4>Por cada compra de 10 perfumes</h4>
-                          <h2>¡obtienes uno <u>gratis</u>!</h2>
-                      </div>
-                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+  <!-- <div class="container-fluid carousel-container">
+    <div class="carousel slide" id="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item item-one active alert alert-warning alert-dismissible fade show" role="alert">
+                <img src="images/bellazurefondo.png" class="d-block w-100" alt="Promoción de Bellazure, compra 10 perfumes y obtén uno gratis">
+                <div class="carousel-caption carousel-caption text-start">
+                    <h4>Por cada compra de 10 perfumes</h4>
+                    <h2>¡obtienes uno <u>gratis</u>!</h2>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+  </div> -->
   <div class="container-fluid table-container">
+    <div class="alert alert-pink text-center" role="alert">
+        <h4 class="alert-heading">Perfumes Bellazure</h4>
+        <p>Encuentra tus fragancias favoritas con calidad garantizada. Ofrecemos una amplia selección de perfumes inspirados en las marcas más reconocidas.</p>
+        <hr>
+        <h5 class="alert-heading">Precios</h5>
+        <p class="mb-0">Disponemos de los siguientes formatos: <u>Muestra</u> por <strong>1 euro</strong>, <u>50ml</u> por <strong>10 euros</strong> y <u>100ml</u> por <strong>15 euros</strong>.</p>
+    </div>
     <table id="table"></table>
   </div>
   <template id="template">
     <div class="col-12 col-md-4 mt-3"> 
-        <div class="card card-%CATEGORY% h-100">
+        <div class="card text-center h-100">
             <div class="card-body">
                 <div class="row g-0">
-                    <div class="col-4 d-flex align-items-center">
-                        <img src="images/%ID%.png" alt="Imagen de perfil" class="mx-auto rounded img-fluid" style="height: 100px;padding:5px">
+                    <div class="position-relative">
+                        <div class="position-absolute top-0 end-0">
+                            <p>
+                                <span class="badge border border-%CATEGORY% text-%CATEGORY% my-1 float-end">%CATEGORY%</span><br>
+                                <span class="badge border border-secondary text-secondary my-1 float-end">Muestra</span><br>
+                                <span class="badge border border-secondary text-secondary my-1 float-end">50 ml</span><br>
+                                <span class="badge border border-secondary text-secondary my-1 float-end">100 ml</span>
+                            </p>
+                        </div>
+                        
                     </div>
-                    <div class="col-8">
-                        <h3 class="mb-0 text-truncated">%ID%</h3>
+                    <div class="align-items-center">
+                        <img src="images/%ID%.png" alt="Imagen de perfil" class="mx-auto rounded img-fluid" style="height: 100px;margin-top:30px;margin-bottom:10px">
+                        <h4 class="mb-1">%ID%</h4>
                         <p class="lead">%NAME%</p>
-                        <p><span class="badge badge-category badge-bg-%CATEGORY%">%CATEGORY%</span></p>
-                        <small>Formatos disponibles:</small>
-                        <p>
-                            <span class="badge text-bg-secondary">Muestra</span>
-                            <span class="badge text-bg-secondary">50 ml</span>
-                            <span class="badge text-bg-secondary">100 ml</span>
-                        </p>
                     </div>
                 </div>
             </div>
