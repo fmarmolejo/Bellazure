@@ -239,3 +239,8 @@ body, html {
 .tt-hint {
     color: #999;
 }
+
+#news-top p{
+    font-size: 13px;
+    padding: 6px;
+}

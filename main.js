@@ -55,6 +55,7 @@ $(document).ready(function() {
             const filteredData = jsonData.filter(item => item.category === category);
             $('#table').bootstrapTable('load', filteredData);
         }
+        document.getElementById('table').scrollIntoView; 
     });
 
     $('#search-input').closest('form').on('submit', function(event){
