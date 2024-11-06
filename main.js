@@ -69,6 +69,8 @@ $(document).ready(function() {
         $('#table').bootstrapTable('load', filteredData);
     });
 
+    $('#priceModal').modal('show');
+
 });
 
 document.addEventListener("DOMContentLoaded", function(){
