@@ -1,16 +1,31 @@
 function initializeTable(){
-    $('#table').bootstrapTable({
-        url: 'json/data.json',
-        toogle: 'table',
-        customViewDefaultView: true,
-        customView: 'customView',
-        columns: [
-            { field: 'id', title: 'ID' },
-            { field: 'name', title: 'Name' },
-            { field: 'category', title: 'Category' }
-        ]
+    Papa.parse('csv/data.csv', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            // Adaptar los nombres de las columnas del CSV a los usados en la tabla
+            const data = results.data.map(row => ({
+                id: row['Número'],
+                name: row['Perfume'],
+                category: row['Categoría'] ? row['Categoría'].toLowerCase() : ''
+            }));
+            csvData = data; // Guardar los datos globalmente
+            $('#table').bootstrapTable({
+                data: csvData,
+                toggle: 'table',
+                customViewDefaultView: true,
+                customView: 'customView',
+                columns: [
+                    { field: 'id', title: 'ID' },
+                    { field: 'name', title: 'Name' },
+                    { field: 'category', title: 'Category' }
+                ]
+            });
+        }
     });
 };
+
+let csvData = []; // Variable global
 
 function customView(data) {
     const template = $('#template').html()
@@ -36,11 +51,7 @@ $(document).ready(function() {
     initializeTable();
     addCategories();
 
-    let jsonData = [];
-    $('#table').on('load-success.bs.table', function (e, data) {
-        jsonData = data;
-    });
-
+    // Ya no es necesario el evento load-success.bs.table para asignar datos
 
     // Events
 
@@ -50,9 +61,9 @@ $(document).ready(function() {
         $(this).addClass('active');
         const category = $(this).attr('data-category');
         if (category === 'all') {
-            $('#table').bootstrapTable('load', jsonData);
+            $('#table').bootstrapTable('load', csvData);
         } else {
-            const filteredData = jsonData.filter(item => item.category === category);
+            const filteredData = csvData.filter(item => item.category === category);
             $('#table').bootstrapTable('load', filteredData);
         }
         document.getElementById('table').scrollIntoView; 
@@ -64,7 +75,7 @@ $(document).ready(function() {
 
     $('#search-input').on('input', function(e) {
         const searchTerm = $(this).val().toLowerCase();
-        const filteredData = jsonData.filter(item => item.name.toLowerCase().includes(searchTerm) ||
+        const filteredData = csvData.filter(item => item.name.toLowerCase().includes(searchTerm) ||
                                                     item.id.toString().includes(searchTerm));
         $('#table').bootstrapTable('load', filteredData);
     });
@@ -88,4 +99,4 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-    
+
